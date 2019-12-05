@@ -1,6 +1,12 @@
+var current = "O";
+var totalTurns = 0;
+var endGame = false;
 
 
-
+function performLogic(buttonId, tileId) {
+  return $('#button1').hide();
+  
+}
 
 
 
