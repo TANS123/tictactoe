@@ -1,12 +1,24 @@
-var current = "O";
+var currentPlayer = "O";
 var totalTurns = 0;
 var endGame = false;
 
 
 function performLogic(buttonId, tileId) {
-  return $('#button1').hide();
-  
+  $(buttonId).hide();
+  $(tileId).text(currentPlayer);
+  return player();
 }
+function player(ex, oh) {
+  if (currentPlayer === 'X') {
+  currentPlayer = 'O';
+} else {
+  currentPlayer = 'X';
+}
+}
+function add(current) {
+  return $().text(totalTurns+1);
+}
+
 
 
 
