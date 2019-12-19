@@ -4,6 +4,11 @@ var endGame = false;
 
 
 function performLogic(buttonId, tileId) {
+
+  if (endGame === true) {
+  return
+  }
+    add();
   $(buttonId).hide();
   $(tileId).text(currentPlayer);
   return player();
@@ -15,10 +20,22 @@ function player(ex, oh) {
   currentPlayer = 'X';
 }
 }
-function add(current) {
-  return $().text(totalTurns+1);
+function add() {
+  totalTurns = totalTurns+1;
+  console.log(totalTurns);
+   if (totalTurns === 9) {
+     $('h1').text('It\'s a draw!');
+      endGame = true;
+   }
 }
 
+// Implement behavior that will end the game when a player wins. First write a function with 3 parameters of the tileIds, and return if the value of the each of the tileIds are equal to the current player
+
+function tileId (tileA, tileB, tileC) {
+  if ($(tileA).val() === $(tileB).val()) {
+    endGame = true;
+  }
+}
 
 
 
